@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     length: 3,
     child: Scaffold(
-      backgroundColor:Colors.blueAccent,
+      backgroundColor:Colors.white70,
       appBar: new AppBar(
 
         backgroundColor: Colors.teal,
@@ -182,7 +182,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
             bottomNavigationBar: CurvedNavigationBar(
+              backgroundColor: Colors.white70,
+        color:Colors.teal,
         items: <Widget>[
+
           Icon(Icons.home, size: 30),
           Icon(Icons.notification_important, size: 30),
           Icon(Icons.camera, size: 30),
@@ -206,22 +209,11 @@ class _MyHomePageState extends State<MyHomePage> {
     body: Center(
     child: Container(
     decoration: BoxDecoration(
-    gradient: LinearGradient(
-    begin: Alignment.topRight,
-    end: Alignment.bottomLeft,
-    colors: [Colors.greenAccent,Colors.blueAccent])),
-    child: Center(
-    child: Text(
-    'Delalaw!',
-    style: TextStyle(
-    fontSize: 28.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.white),
-    ),
-    ),
+    color: Colors.white70,
     )
     )
-      ,
+
+    )
     )
     );
 

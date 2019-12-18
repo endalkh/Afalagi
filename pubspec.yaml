@@ -50,6 +50,21 @@ flutter:
     - assets/images/google.jpg
     - assets/images/imageedit_14_9446235158.png
     - assets/images/splash_screen.jpg
+    - assets/images/allBg.png
+    - assets/images/adis2.png
+    - assets/images/loginbg.png
+    - assets/images/googlelogo.png
+    - assets/images/fblogo.jpg
+    - assets/images/twitterlogo.jpg
+    - assets/images/login.png
+    - assets/images/mac.jpg
+    - assets/images/mac1.jpg
+    - assets/images/mac2.jpg
+    - assets/images/mac3.jpg
+    - assets/images/endalk.jpg
+
+
+
 
 
   fonts:

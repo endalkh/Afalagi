@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
 @override
 void initState() {
 super.initState();
-Timer(Duration(seconds: 5), () =>Navigator.pushNamed(context, LoginScreen.id));
+Timer(Duration(seconds: 5), () =>Navigator.pushNamed(context, LoginPage.id));
 }
 @override
 Widget build(BuildContext context) {
@@ -23,7 +23,6 @@ body: Stack(
 fit: StackFit.expand,
 children: <Widget>[
 Container(
-
 decoration: BoxDecoration(
     image: DecorationImage(
       image: AssetImage("assets/images/splash_screen.jpg"),

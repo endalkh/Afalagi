@@ -1,3 +1,6 @@
+import 'package:addisaba_app/constants/constants.dart';
+import 'package:addisaba_app/pages/appbar/AppBar.dart';
+import 'package:addisaba_app/pages/drawer/navigation_drawer.dart';
 import 'package:addisaba_app/pages/home/homeCatagory/trending.dart';
 import 'package:addisaba_app/pages/utilities/catagories.dart';
 import 'package:addisaba_app/pages/utilities/friends.dart';
@@ -11,64 +14,13 @@ class HomeCat extends StatefulWidget {
 }
 
 class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeCat>{
-  final TextEditingController _searchControl = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      appBar: PreferredSize(
-        child: Padding(
-          padding: EdgeInsets.only(top: 30.0, left: 10.0, right: 10.0),
-          child: Card(
-            elevation: 6.0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5.0),
-                ),
-              ),
-              child: TextField(
-                style: TextStyle(
-                  fontSize: 15.0,
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                    borderSide: BorderSide(color: Colors.white,),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white,),
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                  hintText: "Search..",
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.black,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.filter_list,
-                    color: Colors.black,
-                  ),
-                  hintStyle: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.black,
-                  ),
-                ),
-                maxLines: 1,
-                controller: _searchControl,
-              ),
-            ),
-          ),
-        ),
-        preferredSize: Size(
-          MediaQuery.of(context).size.width,
-          60.0,
-        ),
-      ),
+      appBar: headerNav(context: context,title: "Catagory"),
+
       body: Padding(
         padding: EdgeInsets.fromLTRB(10.0,0,10.0,0),
         child: ListView(
@@ -153,19 +105,11 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
                   child: Text(
                     "See all (9)",
                     style: TextStyle(
-//                      fontSize: 22,
-//                      fontWeight: FontWeight.w800,
                       color: Theme.of(context).accentColor,
                     ),
                   ),
                   onPressed: (){
-//                    Navigator.of(context).push(
-//                      MaterialPageRoute(
-//                        builder: (BuildContext context){
-//                          return DishesScreen();
-//                        },
-//                      ),
-//                    );
+
                   },
                 ),
               ],
@@ -314,12 +258,13 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
           ],
         ),
       ),
+      drawer: SideDrawer(),
     );
-
   }
 
   @override
   bool get wantKeepAlive => true;
+
 
 
 }

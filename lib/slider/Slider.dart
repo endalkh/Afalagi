@@ -22,7 +22,7 @@ class _SlidingCardsViewState extends State<SlidingCardsView> {
 
 
     Timer.periodic(Duration(seconds: 5), (Timer timer) {
-      if (_currentPage < 2) {
+      if (_currentPage < 10) {
         _currentPage++;
       } else {
         _currentPage = 0;
@@ -59,7 +59,7 @@ class _SlidingCardsViewState extends State<SlidingCardsView> {
 
             child: Card(
 
-                color: Colors.blue.withOpacity(0.1),
+                color: Colors.blue.withOpacity(0.2),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 child:Padding(
                     padding: EdgeInsets.all(40),
@@ -70,18 +70,21 @@ class _SlidingCardsViewState extends State<SlidingCardsView> {
                       children: <Widget>[
 
     SizedBox(
-    width: 250.0,
-    child: ScaleAnimatedTextKit(
+    child: TypewriterAnimatedTextKit(
     onTap: () {
     print("Tap Event");
     },
+      speed:Duration(milliseconds: 100) ,
+
     text: ["Hp Cor 7 8G Itel Graphics", "Price:400", "1 Year Guarantee"],
     textStyle: TextStyle(
-    fontSize: 70.0,
-    fontFamily: "Canterbury"
+    fontSize: 40.0,
+    fontFamily: "Agne",
+      color: Colors.white
     ),
     textAlign: TextAlign.start,
-    alignment: AlignmentDirectional.topStart // or Alignment.topLeft
+    alignment: AlignmentDirectional.topStart,
+
     ),
     ),
                       ],

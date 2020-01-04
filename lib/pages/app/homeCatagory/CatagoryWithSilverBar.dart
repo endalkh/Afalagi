@@ -18,7 +18,7 @@ class SliverAppbarPage extends StatelessWidget {
               expandedHeight: 150.0,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-                title: Text('Welcome To Catagory of -------'),
+                title: Text('Best Quality for All'),
                 background: PNetworkImage(assets.images[1], fit: BoxFit.cover),
               ),
               actions: <Widget>[
@@ -141,7 +141,7 @@ class SliverAppbarPage extends StatelessWidget {
           children: <Widget>[
             Expanded(child: Hero(tag:"item$index",child: PNetworkImage(images[index%images.length], fit: BoxFit.cover))),
             SizedBox(height: 10.0,),
-            Text('Top Quality fashion item', softWrap: true,),
+            Text('Top Quality Computers', softWrap: true,),
             SizedBox(height: 10.0,),
             Text('Rs.1,254', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.red),)
           ],
@@ -159,8 +159,8 @@ class SliverAppbarPage extends StatelessWidget {
                 radius: 40,
                 backgroundImage: CachedNetworkImageProvider(images[index%images.length]),
               ),
-              title: Text('Top Quality fashion item', softWrap: true,),
-              subtitle: Text('Rs.1,254', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.red),),
+              title: Text('Top Quality Computers', softWrap: true,),
+              subtitle: Text('EBT 1,254', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.red),),
             ),
           ),
         )
@@ -172,7 +172,7 @@ class SliverAppbarPage extends StatelessWidget {
         builder: (BuildContext context) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text('Top quality fashion item'),
+              title: const Text('Top quality fashion '),
             ),
             body: Material(
               child: Container(
@@ -188,9 +188,9 @@ class SliverAppbarPage extends StatelessWidget {
                           tag:"item$index",
                           child: PNetworkImage(images[index%images.length], fit: BoxFit.cover))),
                       SizedBox(height: 10.0,),
-                      Text('Top Quality fashion item', softWrap: true,),
+                      Text('Top Quality Computers', softWrap: true,),
                       SizedBox(height: 10.0,),
-                      Text('Rs.1,254', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.red),)
+                      Text('30,000 Eth Birr', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.red),)
                     ],
                   ),
                 ),

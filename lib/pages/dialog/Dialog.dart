@@ -121,7 +121,8 @@ class PaymentSuccessDialog extends StatelessWidget {
   final TextStyle label = TextStyle(fontSize: 14.0, color: Colors.grey);
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return
+      Center(
       child: SizedBox(
         height: 370,
         child: Dialog(

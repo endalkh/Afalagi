@@ -1,1032 +1,6 @@
-//import 'package:delalaw/constants/constants.dart';
-//import 'package:delalaw/pages/app/homeCatagory/home.dart';
-//import 'package:delalaw/pages/drawer/navigation_drawer.dart';
-//import 'package:delalaw/pages/search/Search.dart';
-//import 'package:delalaw/slider/Slider.dart';
-//import 'package:flutter/material.dart';
-//
-//class Home extends StatefulWidget {
-//
-//  _HomeState createState() => new _HomeState();
-//}
-//class _HomeState extends State<Home>  with SingleTickerProviderStateMixin {
-//  AnimationController _controller;
-//
-//  @override
-//  void initState() {
-//    _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 900));
-//    super.initState();
-//  }
-//
-//  @override
-//  void dispose() {
-//    _controller.dispose();
-//    super.dispose();
-//  }
-//
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      resizeToAvoidBottomPadding: false,
-//
-//      body: CustomScrollView(
-//
-//        slivers: <Widget>[
-//
-//          new SliverAppBar(
-//
-//
-//            expandedHeight: MediaQuery.of(context).size.height/2.5,
-//
-//            pinned: true,
-//            flexibleSpace: new FlexibleSpaceBar(
-//
-//             background: SlidingCardsView(),
-//
-//
-//
-//
-//              ),
-//
-//actions: <Widget>[
-//  notify(),
-//  new IconButton(
-//    onPressed: () {
-//      Search(context);
-//    },
-//    tooltip: 'Search',
-//    icon: new Icon(Icons.search),
-//  ),
-//
-//
-//],
-//            ),
-//
-//          SliverToBoxAdapter(
-//
-//            child: Container(
-//          decoration: BoxDecoration(
-//
-//gradient: LinearGradient(
-//  colors: [
-//    Colors.black45,
-//    Colors.black54]
-//),
-//              image: DecorationImage(
-//                alignment: Alignment.center,
-//                matchTextDirection: true,
-//                repeat: ImageRepeat.noRepeat,
-//                fit: BoxFit.cover,
-//                image: AssetImage("assets/images/bgHome3.jpg"),
-//              )
-//          ),
-//
-//child: Wrap(
-//
-//children: <Widget>[
+
+import 'package:delalaw/constants/constants.dart';
 import 'package:delalaw/pages/drawer/navigation_drawer.dart';
-////  Background.clipShape(context),
-//
-//  Material(
-//color: Colors.transparent.withOpacity(0.0),
-//borderRadius: BorderRadius.circular(25),
-//
-//    child: Wrap(
-//        children: <Widget>[
-//
-//          InkWell(
-//    onTap: () {
-//      Navigator.pushNamed(context, HOME_CATAGORY);
-//    },
-//
-//          child:Padding(
-//    padding: const EdgeInsets.all(10),
-//         child:Container(
-//            decoration: BoxDecoration(
-//              border: Border.all(color:Colors.black, width:1),
-//              borderRadius: BorderRadius.circular(27),
-//              color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//            ),
-//            child:ClipRRect(
-//                borderRadius: BorderRadius.circular(40),
-//
-//                child:Wrap(
-//                  children: <Widget>[
-////                Button.clipShape(context),
-//                    Align(
-//                      alignment: Alignment.center,
-//                      heightFactor: 1,
-//                      widthFactor: 1,
-//
-//                      child: Container(
-//
-//                          width: 90.0,
-//                          height: 90.0,
-//                          child:Column(
-//
-//                            children: <Widget>[
-//                              Icon(Icons.computer,
-//                                color: Colors.white,
-//                                size: 60,
-//
-//                              ),
-//                              Text("PC",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                textAlign: TextAlign.center,
-//                              )
-//                            ],
-//                          )
-//
-//                      ),
-//
-//
-//
-//
-//                    ),
-//
-//
-//                  ],
-//                )
-//
-//            ),
-//
-//          ),
-//          ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//          Padding(
-//            padding: const EdgeInsets.all(10),
-//            child:Container(
-//              decoration: BoxDecoration(
-//                border: Border.all(color:Colors.black, width:1),
-//                borderRadius: BorderRadius.circular(27),
-//                color: Colors.white.withOpacity(0.3),
-//
-////              border:
-//              ),
-//              child:ClipRRect(
-//                  borderRadius: BorderRadius.circular(40),
-//
-//                  child:Wrap(
-//                    children: <Widget>[
-////                Button.clipShape(context),
-//                      Align(
-//                        alignment: Alignment.center,
-//                        heightFactor: 1,
-//                        widthFactor: 1,
-//
-//                        child: Container(
-//
-//                            width: 90.0,
-//                            height: 90.0,
-//                            child:Column(
-//
-//                              children: <Widget>[
-//                                Icon(Icons.share,
-//                                  color: Colors.white,
-//                                  size: 60,
-//
-//                                ),
-//                                Text("Endalk",style: TextStyle(fontSize: 17,color: Colors.white),
-//                                  textAlign: TextAlign.center,
-//                                )
-//                              ],
-//                            )
-//
-//                        ),
-//
-//
-//
-//
-//                      ),
-//
-//
-//                    ],
-//                  )
-//
-//              ),
-//
-//            ),
-//          ),
-//
-//        ],
-//
-////        ),
-//      ),
-//    ),
-//  ])
-//
-//            )
-//
-//
-//            ),
-//
-//        ],
-//      ),
-//      drawer:SideDrawer(),
-//
-//    );
-//
-//  }
-//  notify(){
-//    return Stack(
-//      children: <Widget>[
-//
-//         IconButton(
-//          onPressed: () {
-//            Navigator.pushNamed(context, NOTIFIACTION_SCREEN);
-//          },
-//          tooltip: 'notification',
-//          icon: new Icon(Icons.notifications),
-//
-//        ),
-//        Positioned(
-//            child: new Stack(
-//              children: <Widget>[
-//                Icon(
-//                  Icons.brightness_1,
-//                  size: 20.0, color: Colors.red,
-//                ),
-//                Positioned(
-//                    top: 3.0,
-//                    right: 4.0,
-//                    child: new Center(
-//                      child: new Text(
-//                        "10",
-//                        style: new TextStyle(
-//                            color: Colors.white,
-//                            fontSize: 11.0,
-//                            fontWeight: FontWeight.w500
-//                        ),
-//                      ),
-//                    )),
-//
-//
-//              ],
-//            )),
-//
-//      ],
-//    );
-//  }
-//
-//}
 import 'package:delalaw/slider/Slider.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -1039,9 +13,68 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      resizeToAvoidBottomInset: false,
+    return
+      //DefaultTabController(
+//      initialIndex: 1,
+//      length: 3,
+//      child: Scaffold(
+//        backgroundColor: Colors.white,
+//        body: SingleChildScrollView(
+//          physics: BouncingScrollPhysics(),
+//          child: Container(
+//            height: MediaQuery.of(context).size.height,
+//            width: MediaQuery.of(context).size.width,
+//            child: Padding(
+//              padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+//              child: Column(
+//                crossAxisAlignment: CrossAxisAlignment.start,
+//                children: <Widget>[
+//
+//
+//                ],
+//              ),
+//            ),
+//          ),
+//        ),
+//      ),
+//    );
+//  }
+//
+//  Widget iconCircle(Color color, String text, IconData icon) {
+//    return Column(
+//      children: <Widget>[
+//        Container(
+//          height: 80,
+//          width: 80,
+//          decoration: BoxDecoration(
+//            shape: BoxShape.circle,
+//            color: color,
+//            gradient: LinearGradient(
+//              colors: [Colors.white, color],
+//              stops: [0, 0.5],
+//              begin: FractionalOffset.topLeft,
+//              end: FractionalOffset.bottomRight,
+//            ),
+//          ),
+//          child: Icon(
+//            icon,
+//            size: 40,
+//          ),
+//        ),
+//        SizedBox(
+//          height: 10,
+//        ),
+//        Text(
+//          text,
+//          style: TextStyle(
+//              color: Colors.black87, fontSize: 11, fontWeight: FontWeight.bold),
+//        )
+//      ],
+//    );
+
+      Scaffold(
+//      resizeToAvoidBottomPadding: false,
+//      resizeToAvoidBottomInset: false,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
@@ -1050,60 +83,26 @@ class Home extends StatelessWidget {
               expandedHeight: 200.0,
               pinned: true,
               flexibleSpace: SlidingCardsView(),
-//              FlexibleSpaceBar(
-//                title: Text('Welcome To Shop'),
-//                background: PNetworkImage(assets.images[1], fit: BoxFit.cover),
-//              ),
               actions: <Widget>[
                 IconButton(
-                  icon: const Icon(Icons.favorite_border),
-                  tooltip: 'Favorites',
-                  onPressed: () { /* ... */ },
+                  icon: const Icon(Icons.notifications),
+                  tooltip: 'Notifications',
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(NOTIFIACTION_SCREEN);
+                  },
                 ),
               ],
 
           ),
-          SliverToBoxAdapter(
 
-            child: Container(
-                color: Colors.blue,
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      MaterialButton(onPressed: (){},child: Text("Catagory".toUpperCase(),style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold
-                      ))),
-                      MaterialButton(onPressed: (){},child: Text("choose your Catagory".toUpperCase(),style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.normal,
-                        fontSize: 12,
-                      ))),
-                    ],
-                  ),
-                )
-            ),
-          ),
 
-//    SliverToBoxAdapter(
-//    child: Container(
-//    height: 600.0,
-//    child: ListView.builder(
-//    scrollDirection: Axis.vertical,
-//    itemCount: 10,
-//    itemBuilder: (context, index) {
-//      return _buildListItem(index);
-//    }
-//    ),
-//    ),
-//    ),
 
+
+//homeMenu(context),
           SliverList(
             delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                return _buildListItem(index);
+                return _buildListItem(index,context);
               },
               childCount: 30,//images.length,
 
@@ -1111,16 +110,52 @@ class Home extends StatelessWidget {
           )
         ],
       ),
+
+
       drawer: SideDrawer(),
     );
   }
-
-   _buildListItem(int index) {
+  Widget iconCircle(Color color, String text, IconData icon) {
+    return Column(
+      children: <Widget>[
+        Container(
+          height: 80,
+          width: 80,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color,
+            gradient: LinearGradient(
+              colors: [Colors.white, color],
+              stops: [0, 0.5],
+              begin: FractionalOffset.topLeft,
+              end: FractionalOffset.bottomRight,
+            ),
+          ),
+          child: Icon(
+            icon,
+            size: 40,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+              color: Colors.black87, fontSize: 11, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
+  }
+   _buildListItem(int index,context) {
     return Container(
         height: 100,
         child: Card(
           child: Center(
             child: ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, HOME_CATAGORY);
+              },
               leading: CircleAvatar(
                 radius: 40,
                 backgroundImage: CachedNetworkImageProvider(images[index%images.length]),
@@ -1133,4 +168,103 @@ class Home extends StatelessWidget {
     );
   }
 
+
+
+homeMenu(context) {
+  return SingleChildScrollView(
+    physics: BouncingScrollPhysics(),
+    child: Container(
+      height: MediaQuery
+          .of(context)
+          .size
+          .height,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
+      child: Padding(
+          padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 3,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+
+                                  Text(
+                                    "Services",
+                                    style: TextStyle(
+                                      color: Colors.black.withOpacity(0.7),
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceBetween,
+                                    children: <Widget>[
+                                      iconCircle(
+                                          Color(0xFFff7bbd), "Send Money",
+                                          Icons.attach_money),
+                                      iconCircle(Color(0xFF6db4e0), "Accounts",
+                                          Icons.account_box),
+                                      iconCircle(
+                                          Color(0xFFc4a1ff), "Global Payments",
+                                          Icons.payment),
+                                      iconCircle(
+                                          Color(0xFF4cd1fe), "Scheduled",
+                                          Icons.schedule),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment
+                                        .spaceBetween,
+                                    children: <Widget>[
+                                      iconCircle(
+                                          Color(0xFF93dfdf), "Up Coming",
+                                          Icons.update),
+                                      iconCircle(
+                                          Color(0xFFfeb885), "Statement",
+                                          Icons.store),
+                                      iconCircle(
+                                          Color(0xFFfeb0d8), "History",
+                                          Icons.history),
+                                      iconCircle(
+                                          Color(0xFF5788f1), "Management",
+                                          Icons.settings),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ]
+          )
+      ),
+    ),
+  );
+}
 }

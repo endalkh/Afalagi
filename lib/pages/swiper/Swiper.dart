@@ -79,7 +79,7 @@ class _SwiperSlide extends State<SwiperSlide>{
 //            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Align(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.center,
 
             child: Text(title, textAlign: TextAlign.center, style: titleStyle.copyWith(
                   color: Colors.white

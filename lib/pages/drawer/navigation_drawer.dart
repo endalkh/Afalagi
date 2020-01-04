@@ -2,6 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delalaw/constants/Asserts.dart';
 import 'package:delalaw/constants/constants.dart';
+import 'package:delalaw/pages/post/Post.dart';
 import 'package:delalaw/pages/widgets/custom_shape.dart';
 import 'package:delalaw/pages/widgets/responsive_ui.dart';
 import 'package:delalaw/utilities/oval_right_clipper.dart';
@@ -169,7 +170,7 @@ class SideDrawer extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, POST);
+Navigator.of(context).pushNamed(POST);
                     },
                     child: _buildRow(Icons.attach_file, "Post",showBadge: false),
                   ),
@@ -180,6 +181,12 @@ class SideDrawer extends StatelessWidget {
                     },
                     child: _buildRow(Icons.message, "Messages", showBadge: true),
                   ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, NOTIFIACTION_SCREEN);
+                          },
+                          child: _buildRow(Icons.notifications, "Notifications", showBadge: true),
+                        ),
 
                   GestureDetector(
                     onTap: () {

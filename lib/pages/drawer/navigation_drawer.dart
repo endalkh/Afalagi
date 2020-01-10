@@ -2,6 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delalaw/constants/Asserts.dart';
 import 'package:delalaw/constants/constants.dart';
+import 'package:delalaw/pages/dialog/confirmationDialog.dart';
 import 'package:delalaw/pages/post/Post.dart';
 import 'package:delalaw/pages/widgets/custom_shape.dart';
 import 'package:delalaw/pages/widgets/responsive_ui.dart';
@@ -88,7 +89,7 @@ class SideDrawer extends StatelessWidget {
 
   }
 
-  Widget navigationDrawer(context){
+   navigationDrawer(context){
     return
       Drawer(
           child: Column(
@@ -120,7 +121,7 @@ class SideDrawer extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            ConfirmationDialog(context,"Are you sure to Logout?",SIGN_IN);
           },
         ),
       ),
@@ -174,7 +175,12 @@ Navigator.of(context).pushNamed(POST);
                     },
                     child: _buildRow(Icons.attach_file, "Post",showBadge: false),
                   ),
-
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, PAYMENT);
+                          },
+                          child: _buildRow(Icons.payment, "Payment", showBadge: true),
+                        ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, CHAT_LIST);
@@ -236,6 +242,7 @@ Navigator.of(context).pushNamed(POST);
                     },
                     child: _buildRow(Icons.email, "Contact us"),
                   ),
+
                         GestureDetector(
                           onTap: () {
                             Navigator.pushNamed(context, DIALOGE_PAGE);

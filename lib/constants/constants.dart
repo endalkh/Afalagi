@@ -15,6 +15,8 @@ final String NOTIFIACTION_SCREEN="NOTIFIACTION_SCREEN";
 final String DIALOGE_PAGE="DIALOGEPAGE";
 final String PROFILE="Profile";
 final String ABOUT_US="ABOUT_US";
+final String PAYMENT="PAYMENT";
+
 
 
 

@@ -119,7 +119,8 @@ class SliverAppbarPage extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(bottom: 20.0),
       height: 200.0,
-      child: Container(
+      child:
+      Container(
         child: Swiper(
           autoplay: true,
           itemBuilder: (BuildContext context,int index){

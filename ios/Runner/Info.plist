@@ -27,6 +27,23 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
+	<string>UI</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Allow to access Calander </string>
+    <key>NSCameraUsageDescription</key>
+    <string>Allow to access Camera</string>
+    <key>NSContactsUsageDescription</key>
+    <string>Allow to access Contact</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Allow to access Location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow to access Locatioin</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Allow to access Microphone</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow to access Library</string>
+    <key>NSRemindersUsageDescription</key>
+
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

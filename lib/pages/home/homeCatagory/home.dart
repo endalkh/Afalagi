@@ -1,7 +1,5 @@
-
-import 'package:delalaw/pages/app/homeCatagory/trending.dart';
 import 'package:delalaw/pages/appbar/AppBar.dart';
-import 'package:delalaw/pages/drawer/navigation_drawer.dart';
+import 'package:delalaw/pages/home/homeCatagory/trending.dart';
 import 'package:delalaw/pages/utilities/catagories.dart';
 import 'package:delalaw/pages/utilities/friends.dart';
 import 'package:delalaw/pages/utilities/restuarants.dart';
@@ -19,14 +17,13 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      appBar: headerNav(context: context,title: "Catagory"),
+//      appBar: headerNav(context: context,title: "Catagory"),
 
       body: Padding(
         padding: EdgeInsets.fromLTRB(10.0,0,10.0,0),
         child: ListView(
           children: <Widget>[
             SizedBox(height: 20.0),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -61,8 +58,6 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
             ),
 
             SizedBox(height: 10.0),
-
-            //Horizontal List here
             Container(
               height: MediaQuery.of(context).size.height/2.4,
               width: MediaQuery.of(context).size.width,
@@ -73,7 +68,6 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
                 itemCount: restaurants == null ? 0 :restaurants.length,
                 itemBuilder: (BuildContext context, int index) {
                   Map restaurant = restaurants[index];
-
                   return Padding(
                     padding: EdgeInsets.only(right: 10.0),
                     child: SlideItem(
@@ -86,10 +80,7 @@ class _HomeState extends State<HomeCat> with AutomaticKeepAliveClientMixin<HomeC
                 },
               ),
             ),
-
             SizedBox(height: 10.0),
-
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

@@ -51,6 +51,8 @@ dependencies:
   auto_size_text: ^2.1.0
   font_awesome_flutter: ^8.5.0
   flutter_swiper: ^1.1.6
+  geolocator: ^5.1.3
+#  image_picker_modern: ^0.4.12+3
 #  firebase_core: ^0.4.0+1
 #  firebase_analytics: ^4.0.2
 dev_dependencies:
@@ -105,3 +107,5 @@ flutter:
    - assets/images/furniture2.jpg
    - assets/images/furniture3.jpg
    - assets/images/tv1.jpg
+   - assets/images/Cbe.jpg
+   - assets/images/Dashen.png

@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'package:delalaw/api/login/get_login_api.dart';
+import 'package:delalaw/api/login/login_post_class.dart';
 import 'package:delalaw/constants/constants.dart';
+import 'package:delalaw/pages/progress/circularProgressBar.dart';
 import 'package:delalaw/pages/widgets/custom_shape.dart';
 import 'package:delalaw/pages/widgets/responsive_ui.dart';
 import 'package:delalaw/pages/widgets/textformfield.dart';
@@ -23,74 +26,40 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  Future<LoginPost> post;
+  bool isLoading = false;
 
-  Future<Post> post;
-  @override
-  void initState() {
-    super.initState();
-    post = fetchPost();
-  }
 
   double _height;
   double _width;
   double _pixelRatio;
   bool _large;
   bool _medium;
-  TextEditingController emailController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> _key = GlobalKey();
 
-
-
   @override
-  Widget build(BuildContext context) {
-     _height = MediaQuery.of(context).size.height;
-     _width = MediaQuery.of(context).size.width;
-     _pixelRatio = MediaQuery.of(context).devicePixelRatio;
-     _large =  ResponsiveWidget.isScreenLarge(_width, _pixelRatio);
-     _medium =  ResponsiveWidget.isScreenMedium(_width, _pixelRatio);
-    return Material(
-child: Container(
-          height: _height,
-        width: _width,
-        padding: EdgeInsets.only(bottom: 5),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              clipShape(),
-              welcomeTextRow(),
-              signInTextRow(),
-              form(),
-              forgetPassTextRow(),
-              SizedBox(height: _height / 12),
-              button(),
-              signUpTextRow(),
-            ],
-          ),
-        ),
-),
-//        child: Center(
-//          child: FutureBuilder<Post>(
-//            future: post,
-//            builder: (context, dataRes) {
-//              if (dataRes.hasData) {
-//                return Text(dataRes.data.email);
-//              } else if (dataRes.hasError) {
-//                return Text("${dataRes.error}");
-//              }
-//
-//              // By default, show a loading spinner.
-//              return CircularProgressIndicator();
-//            },
-//          ),
-//        ),
-      );
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 
 
 
+checkLogin(){
+//  _onLoading();
+  setState(() => isLoading = true);
+  post = checkLoginPost(
+    usernameController.text,
+    passwordController.text,
+  );
+  setState(() => isLoading = false);
+}
 
-  Widget clipShape() {
+  clipShape() {
     return Stack(
       children: <Widget>[
         Opacity(
@@ -133,8 +102,7 @@ child: Container(
       ],
     );
   }
-
-   welcomeTextRow() {
+  welcomeTextRow() {
     return Container(
       margin: EdgeInsets.only(left: _width / 20, top: _height / 100),
       child: Row(
@@ -150,8 +118,7 @@ child: Container(
       ),
     );
   }
-
-   signInTextRow() {
+  signInTextRow() {
     return Container(
       margin: EdgeInsets.only(left: _width / 15.0),
       child: Row(
@@ -167,8 +134,7 @@ child: Container(
       ),
     );
   }
-
-   form() {
+  form() {
     return Container(
       margin: EdgeInsets.only(
           left: _width / 12.0,
@@ -186,18 +152,16 @@ child: Container(
       ),
     );
   }
-
-   emailTextFormField() {
+  emailTextFormField() {
     return CustomTextField(
       keyboardType: TextInputType.emailAddress,
-      textEditingController: emailController,
+      textEditingController: usernameController,
       icon: Icons.email,
       hint: "Email ID",
     );
 
   }
-
-   passwordTextFormField() {
+  passwordTextFormField() {
     return CustomTextField(
       keyboardType: TextInputType.emailAddress,
       textEditingController: passwordController,
@@ -206,8 +170,7 @@ child: Container(
       hint: "Password",
     );
   }
-
-   forgetPassTextRow() {
+  forgetPassTextRow() {
     return Container(
       margin: EdgeInsets.only(top: _height / 40.0),
       child: Row(
@@ -234,18 +197,12 @@ child: Container(
       ),
     );
   }
-
-   button() {
+  button() {
     return RaisedButton(
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       onPressed: () {
-        Navigator.of(context).pushNamed(HOME);
-          print("Routing to your account");
-          Scaffold
-              .of(context)
-              .showSnackBar(SnackBar(content: Text('Login Successful')));
-
+      checkLogin();
       },
       textColor: Colors.white,
       padding: EdgeInsets.all(0.0),
@@ -265,7 +222,7 @@ child: Container(
     );
   }
 
-   signUpTextRow() {
+  signUpTextRow() {
     return Container(
       margin: EdgeInsets.only(top: _height / 120.0),
       child: Row(
@@ -294,39 +251,43 @@ child: Container(
     );
   }
 
-}
 
-class Post {
-  final int userId;
-  final String email;
-  final String phone;
-  final String token;
+  @override
+   build(BuildContext context) {
+     _height = MediaQuery.of(context).size.height;
+     _width = MediaQuery.of(context).size.width;
+     _pixelRatio = MediaQuery.of(context).devicePixelRatio;
+     _large =  ResponsiveWidget.isScreenLarge(_width, _pixelRatio);
+     _medium =  ResponsiveWidget.isScreenMedium(_width, _pixelRatio);
+    return Material(
+child:
 
-
-  Post({this.userId, this.email, this.phone, this.token});
-
-  factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
-      userId: json['userId'],
-      email: json['email'],
-      phone: json['phone'],
-      token: json['token'],
+Container(
+          height: _height,
+        width: _width,
+        padding: EdgeInsets.only(bottom: 5),
+        child: isLoading?CircularIndicator()
+            : SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              clipShape(),
+              welcomeTextRow(),
+              signInTextRow(),
+              form(),
+              forgetPassTextRow(),
+              SizedBox(height: _height / 12),
+              button(),
+              signUpTextRow(),
+            ],
+          ),
+        ),
+),
     );
   }
-}
 
-Future<Post> fetchPost() async {
-  debugPrint('movieTitle:Result');
-  final response =
-  await http.get('http://10.0.2.2:8000/api/login');
 
-  if (response.statusCode == 200) {
-    debugPrint('movieTitle:Result');
 
-    return Post.fromJson(json.decode(response.body));
-  } else {
 
-    throw Exception('Failed to load post');
-  }
 
 }
+

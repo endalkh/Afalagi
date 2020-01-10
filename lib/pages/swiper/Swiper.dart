@@ -4,7 +4,6 @@ import 'package:delalaw/pages/widgets/swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class SwiperSlide extends StatefulWidget{
   _SwiperSlide createState()=>_SwiperSlide();
 }
@@ -62,7 +61,6 @@ class _SwiperSlide extends State<SwiperSlide>{
         fontSize: 20.0
     );
     return SafeArea(
-
         child:Container(
           width: double.infinity,
           margin: const EdgeInsets.fromLTRB(1.0, 0.0,1.0,0.0),
@@ -79,8 +77,7 @@ class _SwiperSlide extends State<SwiperSlide>{
 //            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Align(
-          alignment: Alignment.center,
-
+            alignment: Alignment.center,
             child: Text(title, textAlign: TextAlign.center, style: titleStyle.copyWith(
                   color: Colors.white
               ),),

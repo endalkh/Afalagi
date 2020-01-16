@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "594205139690",
+    "firebase_url": "https://delalaw-a7f07.firebaseio.com",
+    "project_id": "delalaw-a7f07",
+    "storage_bucket": "delalaw-a7f07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594205139690:android:a234d6c96924c9ec2fed93",
+        "android_client_info": {
+          "package_name": "com.addisabasoftwaresolutions.delalaw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594205139690-sm94s7aj4sbchrmedv7ac5sh08hcsub7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrkqbvV5TfBVx8GfcfcQ0yQyBqsRAXuGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594205139690-sm94s7aj4sbchrmedv7ac5sh08hcsub7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
